@@ -1,0 +1,100 @@
+---
+import {
+  SITE_URL,
+  SITE_NAME,
+  HERO_IMAGE_URL,
+  ACQUISITION_EMAIL,
+} from '../lib/constants';
+
+const description =
+  'icra.builders — The definitive, brandable domain for specialized healthcare construction, ICRA-compliant renovations, and infection control expertise in occupied medical facilities.';
+
+const webPage = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `${SITE_NAME} — Premium Domain for ICRA-Focused Healthcare Construction`,
+  description,
+  url: SITE_URL,
+  inLanguage: 'en-US',
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: HERO_IMAGE_URL,
+    contentUrl: HERO_IMAGE_URL,
+  },
+  about: {
+    '@type': 'Thing',
+    name: 'Infection Control Risk Assessment (ICRA) Domain',
+    description:
+      'Premium .builders domain name asset for ICRA expertise, training, consulting, and compliance in healthcare construction.',
+  },
+};
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  email: ACQUISITION_EMAIL,
+  logo: HERO_IMAGE_URL,
+  description,
+};
+
+const product = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'icra.builders domain name',
+  description:
+    'Premium domain for Infection Control Risk Assessment in healthcare construction. A category-defining, brandable domain asset for ICRA training, consulting, and compliance.',
+  category: 'Domain Name',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    price: '14997',
+    priceCurrency: 'USD',
+    seller: {
+      '@type': 'Organization',
+      email: ACQUISITION_EMAIL,
+    },
+    url: `mailto:${ACQUISITION_EMAIL}`,
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: {
+        '@type': 'MonetaryAmount',
+        value: '0.00',
+        currency: 'USD',
+      },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 0,
+          maxValue: 1,
+          unitCode: 'DAY',
+        },
+        transitTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 0,
+          maxValue: 0,
+          unitCode: 'DAY',
+        },
+      },
+      shippingDestination: {
+        '@type': 'DefinedRegion',
+        addressCountry: 'US',
+      },
+    },
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+      returnMethod: 'https://schema.org/ReturnByMail',
+      returnFees: 'https://schema.org/FreeReturn',
+      applicableCountry: 'US',
+      merchantReturnDays: 0,
+    },
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(webPage)} />
+<script type="application/ld+json" set:html={JSON.stringify(organization)} />
+<script type="application/ld+json" set:html={JSON.stringify(product)} />

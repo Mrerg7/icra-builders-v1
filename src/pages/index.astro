@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import InquiryModal from '../components/InquiryModal.astro';
+import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
+---
+
+<BaseLayout>
+  <Nav />
+
+  <!-- Hero Section -->
+  <header class="healthcare-gradient text-white">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8 pt-12 pb-16 md:pt-20 md:pb-24">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 border border-white/20">
+          <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+          <span class="text-sm font-medium tracking-wide">EXCLUSIVELY AVAILABLE</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tighter font-semibold mb-4">
+          icra.builders
+        </h1>
+
+        <p class="max-w-3xl text-xl sm:text-2xl md:text-3xl text-teal-100 tracking-tight mb-3">
+          The definitive brand for healthcare construction that gets ICRA right.
+        </p>
+
+        <p class="max-w-2xl text-base sm:text-lg text-teal-200/90 mb-9">
+          Own the name that instantly signals specialized expertise in Infection Control Risk Assessment —
+          the critical discipline that protects patients during hospital construction and renovation.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button onclick="showInquiryModal()"
+                  class="group inline-flex items-center justify-center gap-x-3 px-8 py-4 bg-white text-teal-700 font-semibold text-base sm:text-lg rounded-3xl hover:bg-teal-50 active:bg-white transition-all shadow-xl shadow-black/10">
+            <span>Secure This Domain</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-active:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+          </button>
+
+          <a href="#opportunity"
+             class="inline-flex items-center justify-center gap-x-2 px-7 py-4 border border-white/30 hover:bg-white/10 text-white font-medium rounded-3xl transition-all text-base sm:text-lg">
+            <span>Explore the Opportunity</span>
+          </a>
+        </div>
+
+        <div class="mt-8 flex items-center gap-x-6 text-sm">
+          <div class="flex items-center -space-x-1" aria-hidden="true">
+            <div class="w-6 h-6 bg-white/20 rounded-full border border-white/40"></div>
+            <div class="w-6 h-6 bg-white/20 rounded-full border border-white/40"></div>
+            <div class="w-6 h-6 bg-white/20 rounded-full border border-white/40"></div>
+          </div>
+          <span class="text-teal-200 text-sm">The category-defining name in healthcare construction</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trust / Stats Bar -->
+  <div class="border-b border-slate-200 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8 py-5">
+      <div class="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-4 text-center md:text-left">
+        <div class="flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="font-medium text-sm text-slate-600">.builders TLD — instantly communicates construction expertise</span>
+        </div>
+        <div class="flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="font-medium text-sm text-slate-600">National healthcare construction spending rising sharply</span>
+        </div>
+        <div class="flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span class="font-medium text-sm text-slate-600">ICRA compliance is now a major bid differentiator</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Opportunity Section -->
+  <section id="opportunity" class="max-w-screen-2xl mx-auto px-6 md:px-8 pt-16 pb-12">
+    <div class="max-w-3xl mb-10">
+      <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-2">THE MARKET</div>
+      <h2 class="section-header tracking-tighter">Healthcare construction is booming — and ICRA expertise is now table stakes.</h2>
+      <p class="mt-4 text-lg text-slate-600">Hospitals and health systems across the U.S. are investing hundreds of billions in new facilities, expansions, and renovations. Almost all of this work happens in or adjacent to occupied patient care environments. ICRA is no longer optional — it's a core requirement that separates winning contractors from everyone else.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 rounded-3xl p-7 modern-card">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-5xl font-semibold tracking-tighter text-slate-900">$30B+</div>
+            <div class="text-teal-600 font-medium mt-1">Projected annual U.S. hospital &amp; clinic construction</div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-teal-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21v12H3V7.5z"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-5 leading-snug">Spending on hospital and clinic construction is forecast to grow significantly through 2030, driven by aging facilities, population growth, and post-pandemic modernization.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl p-7 modern-card">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-5xl font-semibold tracking-tighter text-slate-900">High Risk</div>
+            <div class="text-teal-600 font-medium mt-1">Most contractors lack deep ICRA capability</div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-5 leading-snug">General contractors frequently cause dust breaches, pressure failures, and Joint Commission findings because they treat ICRA as paperwork instead of core construction competency.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl p-7 modern-card">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-5xl font-semibold tracking-tighter text-slate-900">Premium</div>
+            <div class="text-teal-600 font-medium mt-1">Specialists win the complex work</div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-teal-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.774 6.023 6.023 0 01-2.77-.774"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-5 leading-snug">Health systems increasingly pre-qualify or favor contractors who demonstrate genuine ICRA expertise, training programs, and a track record of clean projects in occupied facilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICRA Expertise Section -->
+  <section id="expertise" class="bg-white border-y border-slate-200 py-16">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <div class="max-w-3xl mb-10">
+        <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-2">WHAT SETS ICRA BUILDERS APART</div>
+        <h2 class="section-header tracking-tighter">Real expertise in protecting patients while building.</h2>
+        <p class="mt-4 text-lg text-slate-600">icra.builders represents the contractor or platform that treats Infection Control Risk Assessment as a core construction discipline — not an afterthought.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 modern-card">
+          <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h4 class="font-semibold text-lg tracking-tight mb-2">Class I–IV Protocol Mastery</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">Proper classification of work, barrier design, negative air pressure systems, HEPA filtration, and monitoring that actually works on active job sites.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 modern-card">
+          <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+          </div>
+          <h4 class="font-semibold text-lg tracking-tight mb-2">True ICRA Team Collaboration</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">Early engagement with infection preventionists, facility managers, and clinical teams. Translating clinical risk into practical construction sequencing.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 modern-card">
+          <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+          </div>
+          <h4 class="font-semibold text-lg tracking-tight mb-2">Daily Compliance Discipline</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">Checklists, real-time pressure monitoring with alarms, weekly plan reviews, and immediate response protocols when conditions change on site.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 modern-card">
+          <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+          </div>
+          <h4 class="font-semibold text-lg tracking-tight mb-2">Trained &amp; Certified Workforce</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">Field teams who actually understand why containment matters — not just how to hang plastic. Ongoing training culture that health systems can trust.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 p-5 bg-emerald-50 border border-emerald-100 rounded-3xl text-sm flex gap-x-4 items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="text-emerald-800 text-[13px] leading-snug">
+          <strong>The differentiator:</strong> Most contractors can build. Very few can build inside active hospitals without creating infection risks. icra.builders owns that rare capability in the name itself.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Domain Section -->
+  <section id="why-domain" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-16">
+    <div class="max-w-3xl mb-9">
+      <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-2">THE STRATEGIC ASSET</div>
+      <h2 class="section-header tracking-tighter">Why icra.builders is an exceptionally strong brand.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 p-7 rounded-3xl modern-card">
+        <div class="flex items-center gap-x-3 mb-4">
+          <div class="text-teal-600" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/></svg>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight">Instant Category Ownership</h4>
+        </div>
+        <p class="text-slate-600">"ICRA Builders" tells hospitals, architects, and GCs exactly what you do. No long explanations. The name itself becomes your strongest credential on proposals, bids, trucks, and job site signage.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-7 rounded-3xl modern-card">
+        <div class="flex items-center gap-x-3 mb-4">
+          <div class="text-teal-600" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight">.builders TLD Advantage</h4>
+        </div>
+        <p class="text-slate-600">The .builders extension is modern, descriptive, and perfectly aligned with construction. It feels like a real operating company — not just another .com — while remaining premium and brandable.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-7 rounded-3xl modern-card">
+        <div class="flex items-center gap-x-3 mb-4">
+          <div class="text-teal-600" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight">Short, Memorable &amp; Professional</h4>
+        </div>
+        <p class="text-slate-600">Clean, easy to say, spell, and remember. Performs beautifully in email signatures, domain-based email (@icra.builders), marketing materials, and verbal introductions on job sites.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-7 rounded-3xl modern-card">
+        <div class="flex items-center gap-x-3 mb-4">
+          <div class="text-teal-600" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight">SEO &amp; Search Strength</h4>
+        </div>
+        <p class="text-slate-600">Strong alignment with high-intent searches: "ICRA construction", "ICRA builder", "healthcare construction ICRA", "infection control contractor", and related B2B queries.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-7 rounded-3xl modern-card">
+        <div class="flex items-center gap-x-3 mb-4">
+          <div class="text-teal-600" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M2.985 19.644v-4.992"/></svg>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight">Built for Long-Term Value</h4>
+        </div>
+        <p class="text-slate-600">Healthcare facilities will always need renovation and expansion. ICRA requirements only get stricter. This brand compounds in value as the niche matures.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 p-7 rounded-3xl modern-card">
+        <div class="flex items-center gap-x-3 mb-4">
+          <div class="text-teal-600" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-xl tracking-tight">Multiple Growth Paths</h4>
+        </div>
+        <p class="text-slate-600">Launch as a specialized GC or renovation firm • Build a national network of ICRA-certified builders • Create training &amp; certification programs • Develop compliance software • Become the go-to brand in the space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Models Section -->
+  <section class="bg-slate-900 text-white py-16">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <div class="max-w-2xl mb-9">
+        <div class="text-teal-400 text-xs tracking-[2px] font-semibold mb-2">BUILD THE CATEGORY LEADER</div>
+        <h2 class="text-4xl tracking-tighter font-semibold">Powerful ways to activate this brand immediately.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/></svg>
+          <h5 class="font-semibold mb-1.5">Specialized Healthcare GC / Renovation Firm</h5>
+          <p class="text-sm text-white/70">Position as the go-to contractor for complex occupied-facility work. Win bids that others lose due to ICRA capability gaps.</p>
+        </div>
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zm0 9.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zm0 9.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+          <h5 class="font-semibold mb-1.5">ICRA-Certified Builder Network</h5>
+          <p class="text-sm text-white/70">Create a vetted national or regional network of trained contractors who operate under the icra.builders standard and brand.</p>
+        </div>
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+          <h5 class="font-semibold mb-1.5">Training &amp; Certification Platform</h5>
+          <p class="text-sm text-white/70">Build the industry standard training and certification program for ICRA construction — field crews, supervisors, and project managers.</p>
+        </div>
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+          <h5 class="font-semibold mb-1.5">Compliance Technology</h5>
+          <p class="text-sm text-white/70">Develop digital tools for ICRA permitting, real-time monitoring, daily logs, and documentation — sold under the most credible name in the space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's Perfect For -->
+  <section class="max-w-screen-2xl mx-auto px-6 md:px-8 py-16 border-b border-slate-200">
+    <div class="max-w-3xl">
+      <h2 class="section-header tracking-tighter mb-3">Who should acquire icra.builders?</h2>
+      <p class="text-lg text-slate-600">This is a strategic brand asset for serious players in healthcare construction, compliance, or training who want instant category ownership.</p>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-x-6 gap-y-4 text-sm">
+      <div class="flex gap-x-4">
+        <div class="mt-1 text-teal-600 flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21v12H3V7.5z"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Established General Contractors</div>
+          <div class="text-slate-600 text-sm">Add a specialized division or rebrand your healthcare practice under a name that instantly signals deep ICRA capability.</div>
+        </div>
+      </div>
+      <div class="flex gap-x-4">
+        <div class="mt-1 text-teal-600 flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Specialty Renovation &amp; Fit-Out Firms</div>
+          <div class="text-slate-600 text-sm">Differentiate in the highest-margin segment of healthcare construction — work inside active hospitals and clinics.</div>
+        </div>
+      </div>
+      <div class="flex gap-x-4">
+        <div class="mt-1 text-teal-600 flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Training &amp; Safety Organizations</div>
+          <div class="text-slate-600 text-sm">Launch or rebrand the definitive ICRA training and certification program under the strongest possible name.</div>
+        </div>
+      </div>
+      <div class="flex gap-x-4">
+        <div class="mt-1 text-teal-600 flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">HealthTech &amp; Compliance Startups</div>
+          <div class="text-slate-600 text-sm">Build software, monitoring platforms, or documentation tools on top of the most credible brand in ICRA construction.</div>
+        </div>
+      </div>
+      <div class="flex gap-x-4">
+        <div class="mt-1 text-teal-600 flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Private Equity / Roll-Up Strategies</div>
+          <div class="text-slate-600 text-sm">Acquire the brand as the cornerstone of a national platform of ICRA-specialized construction and renovation companies.</div>
+        </div>
+      </div>
+      <div class="flex gap-x-4">
+        <div class="mt-1 text-teal-600 flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+        </div>
+        <div>
+          <div class="font-semibold">Strategic Domain Investors</div>
+          <div class="text-slate-600 text-sm">A rare, highly brandable, descriptive premium domain in a growing, regulated, high-value niche with clear end-user demand.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA / Acquire Section -->
+  <section id="acquire" class="max-w-screen-2xl mx-auto px-6 md:px-8 py-20">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-block premium-badge mb-4">EXCLUSIVE OPPORTUNITY</div>
+
+      <h2 class="text-4xl sm:text-5xl tracking-tighter font-semibold mb-4">Own the name that defines ICRA construction.</h2>
+      <p class="text-xl text-slate-600 max-w-md mx-auto">icra.builders is available for acquisition. This is a rare chance to secure a truly category-owning brand in healthcare construction.</p>
+
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="showInquiryModal()"
+                class="w-full sm:w-auto px-10 py-4 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 transition-all text-white font-semibold text-lg rounded-3xl flex items-center justify-center gap-x-3 shadow-lg shadow-teal-600/30">
+          <span>Submit Acquisition Inquiry</span>
+        </button>
+
+        <a href="mailto:{ACQUISITION_EMAIL}"
+           class="w-full sm:w-auto px-8 py-4 border border-slate-300 hover:bg-slate-100 transition-all font-medium text-slate-700 rounded-3xl flex items-center justify-center gap-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          <span>Email {ACQUISITION_EMAIL}</span>
+        </a>
+      </div>
+
+      <div class="mt-8 text-xs text-slate-500 flex items-center justify-center gap-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+        <span>Confidential inquiries • Professional escrow transfer • Fast closing available</span>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <InquiryModal />
+</BaseLayout>
