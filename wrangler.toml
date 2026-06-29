@@ -7,3 +7,11 @@ preview_urls = false
 directory = "./dist"
 html_handling = "none"
 not_found_handling = "single-page-application"
+
+[[routes]]
+pattern = "icra.builders"
+zone_name = "icra.builders"
+
+[[routes]]
+pattern = "www.icra.builders"
+zone_name = "icra.builders"
