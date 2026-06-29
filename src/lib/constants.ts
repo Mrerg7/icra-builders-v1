@@ -1,7 +1,7 @@
 export const SITE_URL = 'https://icra.builders';
 export const SITE_NAME = 'icra.builders';
 export const ACQUISITION_EMAIL = 'sales@desertrich.com';
-export const GOOGLE_SITE_VERIFICATION = '';
+export const GOOGLE_SITE_VERIFICATION = 'GKGwnNyrTz_ykbOlfMN1Xh_JaKjUmTaiCXl2oRMfu1s';
 
 /** Cloudflare Images CDN — hero / OG */
 export const HERO_IMAGE_URL =
