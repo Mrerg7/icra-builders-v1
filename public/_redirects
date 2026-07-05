@@ -1,1 +1,3 @@
-# Static single-page site — no redirects needed
+# Canonical URL consolidation for search indexing
+/index.html  /  301
+/index.html/  /  301
