@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryModal from '../../components/InquiryModal.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'FAQ — ICRA Questions & Acquiring icra.builders | icra.builders';
+const description =
+  'Answers to common ICRA (Infection Control Risk Assessment) questions and details on acquiring the premium domain icra.builders — process, escrow, transfer, and price on request.';
+const breadcrumbs = [{ name: 'FAQ', url: '/faq/' }];
+const pageName = 'FAQ — ICRA Questions & Acquiring icra.builders';
+
+const faqs = [
+  {
+    question: 'What does ICRA stand for?',
+    answer:
+      'ICRA stands for Infection Control Risk Assessment. It is the structured process healthcare facilities and their contractors use to identify, evaluate, and control infection risks created by construction and renovation work in occupied medical buildings.',
+  },
+  {
+    question: 'Why is ICRA required during hospital construction?',
+    answer:
+      'Construction activity can mobilize dust and hazardous organisms such as Aspergillus in spaces where patients may be immunocompromised. ICRA defines the classification, containment, air-management, and documentation controls needed to protect those patients while work proceeds — and gives accreditors an evidence trail that the risks were managed.',
+  },
+  {
+    question: 'What are the four ICRA risk classes?',
+    answer:
+      'ICRA uses four classes, I through IV, derived from a matrix of patient-population risk and construction-activity intensity. Class I is the lowest risk with basic dust controls; Class IV is the highest, requiring rigid containment, negative pressure with HEPA exhaust, anterooms, frequent monitoring, and comprehensive documentation.',
+  },
+  {
+    question: 'Who is responsible for completing the ICRA?',
+    answer:
+      'Responsibility is shared. The facility owner sets requirements, infection prevention validates risk, designers plan sequencing, and the general contractor and subcontractors execute and document controls. In practice, a named ICRA lead on the project team keeps the assessment, daily logs, and corrective actions current.',
+  },
+  {
+    question: 'How often should pressure and barriers be monitored?',
+    answer:
+      'Monitoring frequency follows the assigned class and facility policy. As a baseline, barriers are inspected each shift and after any disturbance, while pressure differentials for higher-risk (Class III–IV) work are checked at least once per shift — often more often — with readings logged and out-of-range values escalated the same day.',
+  },
+  {
+    question: 'Is icra.builders for sale?',
+    answer:
+      'Yes. icra.builders is exclusively available for acquisition. It is a premium .builders domain positioned as the category-defining brand for Infection Control Risk Assessment in healthcare construction — suitable for specialized contractors, training and certification platforms, compliance technology, or strategic brand investment.',
+  },
+  {
+    question: 'How do I make an offer or request the price?',
+    answer:
+      'Price is on request. Submit a confidential inquiry through the form on this site, or email sales@desertrich.com directly. Include your intended use, timeline, and any offer level so the acquisition team can respond quickly and privately.',
+  },
+  {
+    question: 'How are domain transfers handled?',
+    answer:
+      'Transactions are secured via Escrow.com. Funds are held in escrow while the domain is transferred with a clean title. Once the buyer confirms receipt, escrow releases payment to the seller — standard practice for premium domain acquisitions.',
+  },
+  {
+    question: 'How fast can the domain be transferred?',
+    answer:
+      'Clean title and ready for immediate transfer. After terms are agreed and escrow opens, transfers commonly complete within a few business days, depending on registrar authorization timelines.',
+  },
+  {
+    question: 'Can I use icra.builders for a training or software business?',
+    answer:
+      'Yes. The name fits multiple activation paths: a specialized healthcare GC or renovation firm, an ICRA-certified builder network, a training and certification platform, or compliance technology. The brand’s strength is instant category ownership across those paths.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  pageName={pageName}
+  faq={faqs}
+>
+  <Nav />
+  <Breadcrumbs items={breadcrumbs} />
+
+  <main class="max-w-screen-2xl mx-auto px-6 md:px-8 py-10 md:py-14">
+    <article class="max-w-3xl">
+      <header class="mb-10">
+        <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-3">ANSWERS</div>
+        <h1 class="text-4xl sm:text-5xl tracking-tighter font-bold leading-[1.08] mb-5">
+          Frequently asked questions
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          Straight answers on ICRA fundamentals — and on acquiring the <strong>icra.builders</strong> domain.
+        </p>
+      </header>
+
+      <div class="space-y-10">
+        <section aria-labelledby="faq-icra">
+          <h2 id="faq-icra" class="text-2xl tracking-tight font-bold text-slate-900 mb-5">
+            ICRA &amp; healthcare construction
+          </h2>
+          <div class="space-y-4">
+            {
+              faqs.slice(0, 5).map((faq) => (
+                <details class="group bg-white border border-slate-200 rounded-3xl px-6 py-5 open:border-teal-300">
+                  <summary class="cursor-pointer font-semibold text-slate-900 list-none flex items-start justify-between gap-4 marker:content-none">
+                    <span>{faq.question}</span>
+                    <span class="text-teal-600 text-xl leading-none mt-0.5 group-open:rotate-45 transition-transform flex-shrink-0" aria-hidden="true">+</span>
+                  </summary>
+                  <p class="mt-4 text-slate-700 leading-relaxed text-[15px]">{faq.answer}</p>
+                </details>
+              ))
+            }
+          </div>
+          <p class="mt-5 text-sm text-slate-500">
+            Deeper guides:
+            <a href="/what-is-icra/" class="text-teal-700 underline decoration-teal-300 underline-offset-4">What is ICRA</a> ·
+            <a href="/icra-classes/" class="text-teal-700 underline decoration-teal-300 underline-offset-4">Class I–IV</a> ·
+            <a href="/icra-compliance-checklist/" class="text-teal-700 underline decoration-teal-300 underline-offset-4">Compliance checklist</a>
+          </p>
+        </section>
+
+        <section aria-labelledby="faq-domain">
+          <h2 id="faq-domain" class="text-2xl tracking-tight font-bold text-slate-900 mb-5">
+            Acquiring icra.builders
+          </h2>
+          <div class="space-y-4">
+            {
+              faqs.slice(5).map((faq) => (
+                <details class="group bg-white border border-slate-200 rounded-3xl px-6 py-5 open:border-teal-300">
+                  <summary class="cursor-pointer font-semibold text-slate-900 list-none flex items-start justify-between gap-4 marker:content-none">
+                    <span>{faq.question}</span>
+                    <span class="text-teal-600 text-xl leading-none mt-0.5 group-open:rotate-45 transition-transform flex-shrink-0" aria-hidden="true">+</span>
+                  </summary>
+                  <p class="mt-4 text-slate-700 leading-relaxed text-[15px]">{faq.answer}</p>
+                </details>
+              ))
+            }
+          </div>
+        </section>
+
+        <div class="my-4 p-6 bg-teal-50 border border-teal-100 rounded-3xl">
+          <h2 class="font-semibold text-lg text-slate-900 mb-2">Still have a question?</h2>
+          <p class="text-slate-700 text-[15px] leading-relaxed mb-4">
+            Confidential inquiries welcome. Price on request — professional escrow via Escrow.com, clean title, ready
+            for immediate transfer.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onclick="showInquiryModal()"
+              class="inline-flex items-center justify-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-3xl text-sm transition-colors"
+            >
+              Submit an inquiry
+            </button>
+            <a
+              href="mailto:sales@desertrich.com"
+              class="inline-flex items-center justify-center px-6 py-3 border border-teal-300 text-teal-800 font-semibold rounded-3xl text-sm hover:bg-teal-100 transition-colors"
+            >
+              sales@desertrich.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <InquiryModal />
+</BaseLayout>

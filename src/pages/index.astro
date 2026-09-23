@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import InquiryModal from '../components/InquiryModal.astro';
-import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
+import { ACQUISITION_EMAIL, RESOURCE_LINKS } from '../lib/constants';
 ---
 
 <BaseLayout>
@@ -18,8 +18,13 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <span class="text-sm font-medium tracking-wide">EXCLUSIVELY AVAILABLE</span>
         </div>
 
-        <h1 class="text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tighter font-semibold mb-4">
-          icra.builders
+        <h1 class="mb-4">
+          <span class="block text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tighter font-semibold">
+            icra.builders
+          </span>
+          <span class="block max-w-3xl text-xl sm:text-2xl md:text-3xl text-teal-100 tracking-tight font-normal mt-3">
+            Premium domain for healthcare construction &amp; ICRA compliance
+          </span>
         </h1>
 
         <p class="max-w-3xl text-xl sm:text-2xl md:text-3xl text-teal-100 tracking-tight mb-3">
@@ -136,7 +141,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
           </div>
-          <h4 class="font-semibold text-lg tracking-tight mb-2">Class I–IV Protocol Mastery</h4>
+          <h3 class="font-semibold text-lg tracking-tight mb-2">Class I–IV Protocol Mastery</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Proper classification of work, barrier design, negative air pressure systems, HEPA filtration, and monitoring that actually works on active job sites.</p>
         </div>
 
@@ -144,7 +149,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
           </div>
-          <h4 class="font-semibold text-lg tracking-tight mb-2">True ICRA Team Collaboration</h4>
+          <h3 class="font-semibold text-lg tracking-tight mb-2">True ICRA Team Collaboration</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Early engagement with infection preventionists, facility managers, and clinical teams. Translating clinical risk into practical construction sequencing.</p>
         </div>
 
@@ -152,7 +157,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
           </div>
-          <h4 class="font-semibold text-lg tracking-tight mb-2">Daily Compliance Discipline</h4>
+          <h3 class="font-semibold text-lg tracking-tight mb-2">Daily Compliance Discipline</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Checklists, real-time pressure monitoring with alarms, weekly plan reviews, and immediate response protocols when conditions change on site.</p>
         </div>
 
@@ -160,7 +165,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="w-11 h-11 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-5" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
           </div>
-          <h4 class="font-semibold text-lg tracking-tight mb-2">Trained &amp; Certified Workforce</h4>
+          <h3 class="font-semibold text-lg tracking-tight mb-2">Trained &amp; Certified Workforce</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Field teams who actually understand why containment matters — not just how to hang plastic. Ongoing training culture that health systems can trust.</p>
         </div>
       </div>
@@ -187,7 +192,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="text-teal-600" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/></svg>
           </div>
-          <h4 class="font-semibold text-xl tracking-tight">Instant Category Ownership</h4>
+          <h3 class="font-semibold text-xl tracking-tight">Instant Category Ownership</h3>
         </div>
         <p class="text-slate-600">"ICRA Builders" tells hospitals, architects, and GCs exactly what you do. No long explanations. The name itself becomes your strongest credential on proposals, bids, trucks, and job site signage.</p>
       </div>
@@ -197,7 +202,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="text-teal-600" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
           </div>
-          <h4 class="font-semibold text-xl tracking-tight">.builders TLD Advantage</h4>
+          <h3 class="font-semibold text-xl tracking-tight">.builders TLD Advantage</h3>
         </div>
         <p class="text-slate-600">The .builders extension is modern, descriptive, and perfectly aligned with construction. It feels like a real operating company — not just another .com — while remaining premium and brandable.</p>
       </div>
@@ -207,7 +212,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="text-teal-600" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
           </div>
-          <h4 class="font-semibold text-xl tracking-tight">Short, Memorable &amp; Professional</h4>
+          <h3 class="font-semibold text-xl tracking-tight">Short, Memorable &amp; Professional</h3>
         </div>
         <p class="text-slate-600">Clean, easy to say, spell, and remember. Performs beautifully in email signatures, domain-based email (@icra.builders), marketing materials, and verbal introductions on job sites.</p>
       </div>
@@ -217,7 +222,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="text-teal-600" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
           </div>
-          <h4 class="font-semibold text-xl tracking-tight">SEO &amp; Search Strength</h4>
+          <h3 class="font-semibold text-xl tracking-tight">SEO &amp; Search Strength</h3>
         </div>
         <p class="text-slate-600">Strong alignment with high-intent searches: "ICRA construction", "ICRA builder", "healthcare construction ICRA", "infection control contractor", and related B2B queries.</p>
       </div>
@@ -227,7 +232,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="text-teal-600" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M2.985 19.644v-4.992"/></svg>
           </div>
-          <h4 class="font-semibold text-xl tracking-tight">Built for Long-Term Value</h4>
+          <h3 class="font-semibold text-xl tracking-tight">Built for Long-Term Value</h3>
         </div>
         <p class="text-slate-600">Healthcare facilities will always need renovation and expansion. ICRA requirements only get stricter. This brand compounds in value as the niche matures.</p>
       </div>
@@ -237,7 +242,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <div class="text-teal-600" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
           </div>
-          <h4 class="font-semibold text-xl tracking-tight">Multiple Growth Paths</h4>
+          <h3 class="font-semibold text-xl tracking-tight">Multiple Growth Paths</h3>
         </div>
         <p class="text-slate-600">Launch as a specialized GC or renovation firm • Build a national network of ICRA-certified builders • Create training &amp; certification programs • Develop compliance software • Become the go-to brand in the space.</p>
       </div>
@@ -255,22 +260,22 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/></svg>
-          <h5 class="font-semibold mb-1.5">Specialized Healthcare GC / Renovation Firm</h5>
+          <h3 class="font-semibold mb-1.5">Specialized Healthcare GC / Renovation Firm</h3>
           <p class="text-sm text-white/70">Position as the go-to contractor for complex occupied-facility work. Win bids that others lose due to ICRA capability gaps.</p>
         </div>
         <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zm0 9.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zm0 9.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
-          <h5 class="font-semibold mb-1.5">ICRA-Certified Builder Network</h5>
+          <h3 class="font-semibold mb-1.5">ICRA-Certified Builder Network</h3>
           <p class="text-sm text-white/70">Create a vetted national or regional network of trained contractors who operate under the icra.builders standard and brand.</p>
         </div>
         <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
-          <h5 class="font-semibold mb-1.5">Training &amp; Certification Platform</h5>
+          <h3 class="font-semibold mb-1.5">Training &amp; Certification Platform</h3>
           <p class="text-sm text-white/70">Build the industry standard training and certification program for ICRA construction — field crews, supervisors, and project managers.</p>
         </div>
         <div class="bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-3xl transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
-          <h5 class="font-semibold mb-1.5">Compliance Technology</h5>
+          <h3 class="font-semibold mb-1.5">Compliance Technology</h3>
           <p class="text-sm text-white/70">Develop digital tools for ICRA permitting, real-time monitoring, daily logs, and documentation — sold under the most credible name in the space.</p>
         </div>
       </div>
@@ -290,7 +295,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21v12H3V7.5z"/></svg>
         </div>
         <div>
-          <div class="font-semibold">Established General Contractors</div>
+          <h3 class="font-semibold">Established General Contractors</h3>
           <div class="text-slate-600 text-sm">Add a specialized division or rebrand your healthcare practice under a name that instantly signals deep ICRA capability.</div>
         </div>
       </div>
@@ -299,7 +304,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
         </div>
         <div>
-          <div class="font-semibold">Specialty Renovation &amp; Fit-Out Firms</div>
+          <h3 class="font-semibold">Specialty Renovation &amp; Fit-Out Firms</h3>
           <div class="text-slate-600 text-sm">Differentiate in the highest-margin segment of healthcare construction — work inside active hospitals and clinics.</div>
         </div>
       </div>
@@ -308,7 +313,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
         </div>
         <div>
-          <div class="font-semibold">Training &amp; Safety Organizations</div>
+          <h3 class="font-semibold">Training &amp; Safety Organizations</h3>
           <div class="text-slate-600 text-sm">Launch or rebrand the definitive ICRA training and certification program under the strongest possible name.</div>
         </div>
       </div>
@@ -317,7 +322,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
         </div>
         <div>
-          <div class="font-semibold">HealthTech &amp; Compliance Startups</div>
+          <h3 class="font-semibold">HealthTech &amp; Compliance Startups</h3>
           <div class="text-slate-600 text-sm">Build software, monitoring platforms, or documentation tools on top of the most credible brand in ICRA construction.</div>
         </div>
       </div>
@@ -326,7 +331,7 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
         </div>
         <div>
-          <div class="font-semibold">Private Equity / Roll-Up Strategies</div>
+          <h3 class="font-semibold">Private Equity / Roll-Up Strategies</h3>
           <div class="text-slate-600 text-sm">Acquire the brand as the cornerstone of a national platform of ICRA-specialized construction and renovation companies.</div>
         </div>
       </div>
@@ -335,9 +340,49 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
         </div>
         <div>
-          <div class="font-semibold">Strategic Domain Investors</div>
+          <h3 class="font-semibold">Strategic Domain Investors</h3>
           <div class="text-slate-600 text-sm">A rare, highly brandable, descriptive premium domain in a growing, regulated, high-value niche with clear end-user demand.</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICRA Resource Hub -->
+  <section id="resources" class="bg-white border-t border-slate-200 py-16">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <div class="max-w-3xl mb-10">
+        <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-2">ICRA RESOURCE HUB</div>
+        <h2 class="section-header tracking-tighter">Understand the discipline this domain owns.</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Clear, practical guides on Infection Control Risk Assessment — the specialized knowledge behind the
+          <a href="/what-is-icra/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4 hover:text-teal-800">icra.builders</a> brand.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {
+          RESOURCE_LINKS.map((link) => (
+            <a
+              href={link.href}
+              class="group bg-slate-50 border border-slate-200 rounded-3xl p-6 modern-card flex flex-col justify-between min-h-[160px]"
+            >
+              <div>
+                <div class="w-10 h-10 flex items-center justify-center bg-teal-100 text-teal-600 rounded-2xl mb-4" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-lg tracking-tight group-hover:text-teal-700 transition-colors">{link.label}</h3>
+              </div>
+              <span class="mt-4 inline-flex items-center gap-x-1.5 text-sm font-medium text-teal-600">
+                Read guide
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-active:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -356,11 +401,17 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
           <span>Submit Acquisition Inquiry</span>
         </button>
 
-        <a href="mailto:{ACQUISITION_EMAIL}"
+        <a href={`mailto:${ACQUISITION_EMAIL}`}
            class="w-full sm:w-auto px-8 py-4 border border-slate-300 hover:bg-slate-100 transition-all font-medium text-slate-700 rounded-3xl flex items-center justify-center gap-x-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
           <span>Email {ACQUISITION_EMAIL}</span>
         </a>
+      </div>
+
+      <div class="mt-6 inline-flex items-center gap-x-2 px-5 py-2.5 bg-slate-100 border border-slate-200 rounded-3xl text-sm font-semibold text-slate-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33"/></svg>
+        <span>Price on request</span>
+        <span class="text-slate-400 font-normal">• Make an offer below</span>
       </div>
 
       <div class="mt-8 text-xs text-slate-500 flex items-center justify-center gap-x-2">

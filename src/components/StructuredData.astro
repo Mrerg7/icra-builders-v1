@@ -6,15 +6,33 @@ import {
   ACQUISITION_EMAIL,
 } from '../lib/constants';
 
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  breadcrumbs?: BreadcrumbItem[];
+  faq?: FaqItem[];
+  pageName?: string;
+}
+
+const { breadcrumbs = [], faq = [], pageName } = Astro.props;
+
 const description =
   'icra.builders — The definitive, brandable domain for specialized healthcare construction, ICRA-compliant renovations, and infection control expertise in occupied medical facilities.';
 
 const webPage = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: `${SITE_NAME} — Premium Domain for ICRA-Focused Healthcare Construction`,
+  name: pageName ?? `${SITE_NAME} — Premium Domain for ICRA-Focused Healthcare Construction`,
   description,
-  url: SITE_URL,
+  url: Astro.url.href,
   inLanguage: 'en-US',
   primaryImageOfPage: {
     '@type': 'ImageObject',
@@ -26,6 +44,22 @@ const webPage = {
     name: 'Infection Control Risk Assessment (ICRA) Domain',
     description:
       'Premium .builders domain name asset for ICRA expertise, training, consulting, and compliance in healthcare construction.',
+  },
+};
+
+const webSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: SITE_URL,
+  description,
+  inLanguage: 'en-US',
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+    email: ACQUISITION_EMAIL,
+    logo: HERO_IMAGE_URL,
   },
 };
 
@@ -44,7 +78,7 @@ const product = {
   '@type': 'Product',
   name: 'icra.builders domain name',
   description:
-    'Premium domain for Infection Control Risk Assessment in healthcare construction. A category-defining, brandable domain asset for ICRA training, consulting, and compliance.',
+    'Premium domain for Infection Control Risk Assessment in healthcare construction. A category-defining, brandable domain asset for ICRA training, consulting, and compliance. Price on request — confidential acquisition inquiry.',
   category: 'Domain Name',
   image: HERO_IMAGE_URL,
   brand: {
@@ -54,53 +88,60 @@ const product = {
   sku: 'ICRA-BUILDERS-001',
   offers: {
     '@type': 'Offer',
+    url: SITE_URL,
     availability: 'https://schema.org/InStock',
-    price: '14997',
-    priceCurrency: 'USD',
+    description: 'Available for acquisition. Price on request via confidential inquiry.',
     seller: {
       '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
       email: ACQUISITION_EMAIL,
-    },
-    url: `mailto:${ACQUISITION_EMAIL}`,
-    shippingDetails: {
-      '@type': 'OfferShippingDetails',
-      shippingRate: {
-        '@type': 'MonetaryAmount',
-        value: '0.00',
-        currency: 'USD',
-      },
-      deliveryTime: {
-        '@type': 'ShippingDeliveryTime',
-        handlingTime: {
-          '@type': 'QuantitativeValue',
-          minValue: 0,
-          maxValue: 1,
-          unitCode: 'DAY',
-        },
-        transitTime: {
-          '@type': 'QuantitativeValue',
-          minValue: 0,
-          maxValue: 0,
-          unitCode: 'DAY',
-        },
-      },
-      shippingDestination: {
-        '@type': 'DefinedRegion',
-        addressCountry: 'US',
-      },
-    },
-    hasMerchantReturnPolicy: {
-      '@type': 'MerchantReturnPolicy',
-      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-      returnMethod: 'https://schema.org/ReturnByMail',
-      returnFees: 'https://schema.org/FreeReturn',
-      applicableCountry: 'US',
-      merchantReturnDays: 0,
     },
   },
 };
+
+const breadcrumbList =
+  breadcrumbs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          ...breadcrumbs.map((crumb, index) => ({
+            '@type': 'ListItem',
+            position: index + 2,
+            name: crumb.name,
+            item: new URL(crumb.url, SITE_URL).href,
+          })),
+        ],
+      }
+    : null;
+
+const faqPage =
+  faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(webPage)} />
+<script type="application/ld+json" set:html={JSON.stringify(webSite)} />
 <script type="application/ld+json" set:html={JSON.stringify(organization)} />
 <script type="application/ld+json" set:html={JSON.stringify(product)} />
+{breadcrumbList && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} />}
+{faqPage && <script type="application/ld+json" set:html={JSON.stringify(faqPage)} />}

@@ -1,18 +1,31 @@
 ---
 import '../styles/global.css';
 import StructuredData from '../components/StructuredData.astro';
-import { SITE_NAME, SITE_URL, HERO_IMAGE_URL, GOOGLE_SITE_VERIFICATION } from '../lib/constants';
+import type { BreadcrumbItem, FaqItem } from '../components/StructuredData.astro';
+import {
+  SITE_NAME,
+  SITE_URL,
+  HERO_IMAGE_URL,
+  GOOGLE_SITE_VERIFICATION,
+  CF_WEB_ANALYTICS_TOKEN,
+} from '../lib/constants';
 
 interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  faq?: FaqItem[];
+  pageName?: string;
 }
 
 const {
   title = `${SITE_NAME} — Premium Domain for ICRA-Focused Healthcare Construction`,
   description = 'Acquire icra.builders — the definitive, brandable domain for specialized healthcare construction, ICRA-compliant renovations, and infection control expertise in occupied medical facilities.',
   noindex = false,
+  breadcrumbs = [],
+  faq = [],
+  pageName,
 } = Astro.props;
 
 const pathname = Astro.url.pathname.endsWith('/')
@@ -21,6 +34,7 @@ const pathname = Astro.url.pathname.endsWith('/')
 const canonical = new URL(pathname, SITE_URL).href;
 const ogImage = HERO_IMAGE_URL;
 const themeColor = '#0D9488';
+const beaconConfig = JSON.stringify({ token: CF_WEB_ANALYTICS_TOKEN });
 ---
 
 <!doctype html>
@@ -76,7 +90,18 @@ const themeColor = '#0D9488';
     />
     <link rel="preconnect" href="https://imagedelivery.net" />
 
-    <StructuredData />
+    <StructuredData breadcrumbs={breadcrumbs} faq={faq} pageName={pageName} />
+
+    {
+      CF_WEB_ANALYTICS_TOKEN && (
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={beaconConfig}
+          defer
+        />
+      )
+    }
   </head>
   <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
     <slot />

@@ -1,0 +1,29 @@
+---
+import type { BreadcrumbItem } from './StructuredData.astro';
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="max-w-screen-2xl mx-auto px-6 md:px-8 pt-8">
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
+    <li>
+      <a href="/" class="hover:text-teal-600 transition-colors">Home</a>
+    </li>
+    {
+      items.map((item) => (
+        <li class="flex items-center gap-x-2">
+          <span aria-hidden="true" class="text-slate-300">
+            /
+          </span>
+          <a href={item.url} class="hover:text-teal-600 transition-colors" aria-current="page">
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

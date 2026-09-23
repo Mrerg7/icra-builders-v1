@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryModal from '../../components/InquiryModal.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'ICRA Compliance Checklist for Healthcare Construction | icra.builders';
+const description =
+  'A practical ICRA compliance checklist for healthcare construction — pre-construction, barriers, negative pressure, daily monitoring, housekeeping, and closeout documentation.';
+const breadcrumbs = [{ name: 'ICRA Checklist', url: '/icra-compliance-checklist/' }];
+const pageName = 'ICRA Compliance Checklist for Healthcare Construction';
+
+const phases = [
+  {
+    title: 'Pre-construction',
+    items: [
+      'Complete the written ICRA assessment for the specific work area and phasing',
+      'Assign and document the ICRA risk class with rationale (Class I–IV)',
+      'Walk the site with infection prevention, facilities, and the contractor',
+      'Identify adjacent patient care spaces, air handlers, and shaft penetrations',
+      'Confirm construction traffic routes separate from clinical traffic',
+      'Establish pressure monitoring locations and acceptable differentials',
+      'Brief all trades on ICRA protocols before mobilization',
+      'Post signage for work zones, PPE, and restricted access',
+    ],
+  },
+  {
+    title: 'Barriers & containment',
+    items: [
+      'Install sealed barriers per the control plan (plastic vs. rigid as specified)',
+      'Verify all penetrations in barriers are sealed (tape, mastic, gaskets)',
+      'Keep doors to the work zone closed; use anterooms where required',
+      'Protect finished surfaces along transport routes',
+      'Stage sticky mats / tacky mats at entry points as specified',
+      'Inspect barriers at least once per shift and after any disturbance',
+      'Document barrier repairs with time and responsible party',
+    ],
+  },
+  {
+    title: 'Air management (Class III–IV and as specified)',
+    items: [
+      'Establish negative pressure relative to adjacent occupied spaces',
+      'Confirm HEPA filtration on exhaust; verify units are serviced',
+      'Monitor pressure differentials on the defined schedule (each shift minimum for Class IV)',
+      'Log readings with time, value, and initials; investigate out-of-range results',
+      'Ensure alarms are set and tested where used',
+      'Never exhaust filtered air into occupied clinical space or return air plenums',
+      'Pause work if differentials cannot be maintained — escalate immediately',
+    ],
+  },
+  {
+    title: 'Daily operations & housekeeping',
+    items: [
+      'Wet methods preferred over dry cutting, grinding, or sweeping',
+      'HEPA vacuum only — no standard shop vacs in patient care areas',
+      'Damp-wipe surfaces at end of shift; remove debris daily (never stored in corridors)',
+      'Maintain clear egress and fire-rated separations',
+      'Control noise and vibration windows per facility policy',
+      'Supervisor reviews the daily ICRA log and signs off',
+      'Infection prevention receives escalations same-day when deviations occur',
+    ],
+  },
+  {
+    title: 'Closeout & handoff',
+    items: [
+      'Final clean: HEPA vacuum, damp-wipe, and wet methods on all surfaces',
+      'Remove temporary barriers, negative air machines, and monitoring equipment',
+      'Seal and verify any wall/ceiling penetrations disturbed by the work',
+      'Complete final pressure and containment verification before reopening',
+      'Assemble the ICRA binder: assessment, class, plan, logs, corrective actions',
+      'Joint walkthrough with infection prevention and clinical stakeholders',
+      'Document space return-to-service approval',
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} pageName={pageName}>
+  <Nav />
+  <Breadcrumbs items={breadcrumbs} />
+
+  <main class="max-w-screen-2xl mx-auto px-6 md:px-8 py-10 md:py-14">
+    <article class="max-w-3xl">
+      <header class="mb-10">
+        <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-3">FIELD REFERENCE</div>
+        <h1 class="text-4xl sm:text-5xl tracking-tighter font-bold leading-[1.08] mb-5">
+          ICRA compliance checklist for healthcare construction
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          A phase-by-phase working list for contractors and facilities teams — covering assessment, containment, air
+          management, daily logs, and closeout evidence that stands up in a survey.
+        </p>
+      </header>
+
+      <div class="space-y-8 text-slate-700 leading-relaxed text-[17px]">
+        <p>
+          Checklists don’t replace judgment — they make sure judgment is applied consistently. Use this as a starting
+          template, then align it with your facility’s ICRA policy and the risk class from your
+          <a href="/icra-classes/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">ICRA assessment</a>.
+          If you’re new to the framework, read
+          <a href="/what-is-icra/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">what ICRA is</a> first.
+        </p>
+
+        {
+          phases.map((phase) => (
+            <section class="bg-white border border-slate-200 rounded-3xl p-7">
+              <h2 class="text-2xl tracking-tight font-bold text-slate-900 mb-5">{phase.title}</h2>
+              <ul class="space-y-3">
+                {phase.items.map((item) => (
+                  <li class="flex gap-3 text-[15px] text-slate-700 leading-relaxed">
+                    <span
+                      class="mt-1 w-4 h-4 border-2 border-teal-500 rounded flex-shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">Documentation that survives a survey</h2>
+        <p>
+          When accreditors or system auditors ask about ICRA, they want an evidence trail — not verbal assurances.
+          Keep one project binder (digital or physical) containing:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 marker:text-teal-600">
+          <li>The signed ICRA assessment and assigned class</li>
+          <li>The control plan and any approved revisions</li>
+          <li>Daily pressure logs and barrier inspection records</li>
+          <li>Photos of containment setup at key milestones</li>
+          <li>Corrective actions for any deviation, with closure dates</li>
+          <li>Closeout cleaning and return-to-service sign-off</li>
+        </ul>
+
+        <div class="my-10 p-6 bg-teal-50 border border-teal-100 rounded-3xl">
+          <h3 class="font-semibold text-lg text-slate-900 mb-2">Make ICRA your brand</h3>
+          <p class="text-slate-700 text-[15px] leading-relaxed mb-4">
+            Firms that run ICRA this cleanly differentiate on every bid. <strong>icra.builders</strong> — the domain
+            that says so before you open your mouth. Available for acquisition; price on request.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onclick="showInquiryModal()"
+              class="inline-flex items-center justify-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-3xl text-sm transition-colors"
+            >
+              Inquire about the domain
+            </button>
+            <a
+              href="/#acquire"
+              class="inline-flex items-center justify-center px-6 py-3 border border-teal-300 text-teal-800 font-semibold rounded-3xl text-sm hover:bg-teal-100 transition-colors"
+            >
+              Acquisition details
+            </a>
+          </div>
+        </div>
+
+        <nav class="border-t border-slate-200 pt-8 mt-12" aria-label="Related guides">
+          <h2 class="text-xs font-semibold uppercase tracking-[1.5px] text-slate-500 mb-4">Related guides</h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <a href="/what-is-icra/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">What is ICRA?</span>
+              <span class="text-sm text-slate-600">Process foundations</span>
+            </a>
+            <a href="/icra-classes/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">ICRA Class I–IV</span>
+              <span class="text-sm text-slate-600">Risk matrix guide</span>
+            </a>
+            <a href="/faq/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">FAQ</span>
+              <span class="text-sm text-slate-600">ICRA + domain answers</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <InquiryModal />
+</BaseLayout>

@@ -1,18 +1,23 @@
-# Canonical Link header for root path
-/
-  Link: <https://icra.builders/>; rel="canonical"
-
-# Security headers for HTML
-/*.html
+# Security + baseline headers for all responses
+/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
-# Cache static assets
-/assets/*
+# Fingerprinted Astro build assets — cache forever
+/_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Favicon
+/favicon.svg
+  Cache-Control: public, max-age=86400
 
 # Sitemap content-type
 /sitemap*.xml
   Content-Type: application/xml; charset=utf-8
+
+# robots.txt
+/robots.txt
+  Cache-Control: public, max-age=3600

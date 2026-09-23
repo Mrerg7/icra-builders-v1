@@ -1,5 +1,5 @@
 ---
-import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
+import { SITE_NAME } from '../lib/constants';
 ---
 
 <div id="inquiry-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -17,26 +17,26 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
       </button>
     </div>
 
-    <form id="inquiry-form" class="p-7 space-y-5">
+    <form id="inquiry-form" class="p-7 space-y-5" novalidate>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label class="block text-xs font-semibold tracking-wider text-slate-500 mb-1.5" for="full-name">FULL NAME</label>
-          <input type="text" id="full-name" name="full-name" required class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="Jordan Hale" autocomplete="name">
+          <input type="text" id="full-name" name="name" required autocomplete="name" class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="Jordan Hale">
         </div>
         <div>
           <label class="block text-xs font-semibold tracking-wider text-slate-500 mb-1.5" for="company">COMPANY / ORGANIZATION</label>
-          <input type="text" id="company" name="company" class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="Your Company or 'Individual'" autocomplete="organization">
+          <input type="text" id="company" name="company" autocomplete="organization" class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="Your Company or 'Individual'">
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label class="block text-xs font-semibold tracking-wider text-slate-500 mb-1.5" for="email">EMAIL ADDRESS</label>
-          <input type="email" id="email" name="email" required class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="you@company.com" autocomplete="email">
+          <input type="email" id="email" name="email" required autocomplete="email" class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="you@company.com">
         </div>
         <div>
           <label class="block text-xs font-semibold tracking-wider text-slate-500 mb-1.5" for="phone">PHONE (OPTIONAL)</label>
-          <input type="tel" id="phone" name="phone" class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="(602) 555-0199" autocomplete="tel">
+          <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3 rounded-2xl text-sm" placeholder="(602) 555-0199">
         </div>
       </div>
 
@@ -44,6 +44,14 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
         <label class="block text-xs font-semibold tracking-wider text-slate-500 mb-1.5" for="message">TELL US ABOUT YOUR INTEREST</label>
         <textarea id="message" name="message" rows="4" required class="w-full border border-slate-200 focus:border-teal-500 outline-none px-4 py-3.5 rounded-3xl text-sm resize-y min-h-[92px]" placeholder="I'm interested in acquiring icra.builders to launch a specialized ICRA healthcare renovation division. My team has strong hospital experience and we're looking for the right brand to lead with..."></textarea>
       </div>
+
+      <!-- Honeypot: hidden from humans, catches bots -->
+      <div class="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <p id="inquiry-error" class="hidden text-sm text-red-600 bg-red-50 border border-red-100 rounded-2xl px-4 py-3" role="alert"></p>
 
       <div class="pt-2">
         <button type="submit"
@@ -76,6 +84,39 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
     }
   }
 
+  function showError(message: string) {
+    const el = document.getElementById('inquiry-error');
+    if (!el) return;
+    el.textContent = message;
+    el.classList.remove('hidden');
+  }
+
+  function setLoading(button: HTMLButtonElement, loading: boolean) {
+    if (loading) {
+      button.innerHTML = `<span class="flex items-center justify-center gap-x-2">
+        <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+        </svg><span>Submitting...</span></span>`;
+      button.disabled = true;
+    } else {
+      button.innerHTML = `<span>Submit Confidential Inquiry</span>`;
+      button.disabled = false;
+    }
+  }
+
+  function showSuccess(form: HTMLFormElement) {
+    form.innerHTML = `<div class="py-8 text-center">
+      <div class="mx-auto w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="font-semibold text-2xl tracking-tight text-slate-900 mb-2">Inquiry Received</h3>
+      <p class="text-slate-600 max-w-xs mx-auto">Thank you. A member of our acquisition team will contact you within 24 hours to discuss next steps confidentially.</p>
+      <button type="button" class="mt-8 px-8 py-3 text-sm font-semibold border border-slate-200 hover:bg-slate-50 rounded-3xl transition-colors" id="close-success-btn">Close Window</button>
+    </div>`;
+    document.getElementById('close-success-btn')?.addEventListener('click', hideModal);
+  }
+
   document.getElementById('modal-close-btn')?.addEventListener('click', hideModal);
   document.getElementById('inquiry-modal')?.addEventListener('click', (e) => {
     if (e.target === e.currentTarget) hideModal();
@@ -90,31 +131,58 @@ import { SITE_NAME, ACQUISITION_EMAIL } from '../lib/constants';
     }
   });
 
-  document.getElementById('inquiry-form')?.addEventListener('submit', (e) => {
+  document.getElementById('inquiry-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
     const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    if (!submitBtn) return;
+    const errorEl = document.getElementById('inquiry-error');
+    errorEl?.classList.add('hidden');
 
-    submitBtn.innerHTML = `<span class="flex items-center justify-center gap-x-2">
-      <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-      </svg><span>Submitting...</span></span>`;
-    submitBtn.disabled = true;
+    const getValue = (id: string): string =>
+      (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() ?? '';
 
-    setTimeout(() => {
-      form.innerHTML = `<div class="py-8 text-center">
-        <div class="mx-auto w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="font-semibold text-2xl tracking-tight text-slate-900 mb-2">Inquiry Received</h3>
-        <p class="text-slate-600 max-w-xs mx-auto">Thank you. A member of our acquisition team will contact you within 24 hours to discuss next steps confidentially.</p>
-        <button type="button" class="mt-8 px-8 py-3 text-sm font-semibold border border-slate-200 hover:bg-slate-50 rounded-3xl transition-colors" id="close-success-btn">Close Window</button>
-      </div>`;
+    const payload = {
+      name: getValue('full-name'),
+      company: getValue('company'),
+      email: getValue('email'),
+      phone: getValue('phone'),
+      message: getValue('message'),
+      website: getValue('website'),
+    };
 
-      document.getElementById('close-success-btn')?.addEventListener('click', hideModal);
-    }, 1450);
+    if (!payload.name || !payload.email || !payload.message) {
+      showError('Please fill in your name, email, and message.');
+      return;
+    }
+
+    if (submitBtn) setLoading(submitBtn, true);
+
+    try {
+      const res = await fetch('/api/inquire', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+
+      if (!res.ok) {
+        if (submitBtn) setLoading(submitBtn, false);
+        showError(
+          data.error ??
+            'Something went wrong. Please email sales@desertrich.com directly and we will respond promptly.',
+        );
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      showSuccess(form);
+    } catch {
+      if (submitBtn) setLoading(submitBtn, false);
+      showError(
+        'Network error. Please email sales@desertrich.com directly and we will respond promptly.',
+      );
+    }
   });
 
   // Expose for external triggers

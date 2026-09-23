@@ -11,6 +11,9 @@ html_handling = "force-trailing-slash"
 not_found_handling = "404-page"
 run_worker_first = true
 
+[[send_email]]
+name = "EMAIL"
+
 [[routes]]
 pattern = "icra.builders"
 zone_name = "icra.builders"

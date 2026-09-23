@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryModal from '../../components/InquiryModal.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'ICRA Class I, II, III & IV Explained — Risk Matrix Guide | icra.builders';
+const description =
+  'Understand ICRA Class I through Class IV: how the Infection Control Risk Assessment matrix combines patient risk with construction activity, and which controls each class requires.';
+const breadcrumbs = [{ name: 'ICRA Class I–IV', url: '/icra-classes/' }];
+const pageName = 'ICRA Class I, II, III & IV Explained';
+
+const classes = [
+  {
+    id: 'class-i',
+    name: 'ICRA Class I — Low risk',
+    risk: 'Low-risk patients / low-impact work',
+    summary:
+      'Work that generates little dust and does not breach the building envelope in patient care areas — for example, cosmetic painting, floor finish removal with wet methods, or furniture replacement outside sterile zones.',
+    controls: [
+      'Basic housekeeping and routine dust control',
+      'Keep construction routes away from vulnerable patients when practical',
+      'Standard barrier protection for finished surfaces',
+      'Visual inspections; lightweight documentation',
+    ],
+  },
+  {
+    id: 'class-ii',
+    name: 'ICRA Class II — Medium–low risk',
+    risk: 'Lower-risk populations with moderate construction impact',
+    summary:
+      'More invasive non-structural work — ceiling access, minor utility adjustments, equipment installation — in areas serving patients at average infection risk.',
+    controls: [
+      'Sealed work areas with intact barriers',
+      'Controlled access; construction traffic separated from clinical traffic',
+      'Dust suppression (wet methods, HEPA vacuums)',
+      'Regular barrier and cleanliness checks with logged findings',
+    ],
+  },
+  {
+    id: 'class-iii',
+    name: 'ICRA Class III — Medium–high risk',
+    risk: 'Higher-risk patients or higher-impact construction',
+    summary:
+      'Work that opens walls or ceilings near moderately susceptible patients, or larger-scale renovations where dust migration risk is material.',
+    controls: [
+      'Negative air pressure in the work zone with HEPA-filtered exhaust',
+      'Sealed barriers; anterooms where conditions warrant',
+      'Restricted, controlled entry; sticky mats as appropriate',
+      'Frequent pressure differential monitoring with documentation',
+      'Detailed daily logs and supervisory sign-off',
+    ],
+  },
+  {
+    id: 'class-iv',
+    name: 'ICRA Class IV — High risk',
+    risk: 'Highest-risk patients + intensive construction activity',
+    summary:
+      'Major construction adjacent to protective environment or airborne infection isolation rooms — demolition, large utility installation, and work near transplant, oncology, or NICU populations.',
+    controls: [
+      'Rigid, sealed containment with negative pressure and HEPA exhaust',
+      'Anteroom entry protocols; doors kept closed',
+      'Continuous or scheduled pressure monitoring with alarms',
+      'Stringent housekeeping: wet methods, HEPA vacuuming, damp-wiping',
+      'Tightly controlled schedules; infection prevention sign-off at each phase',
+      'Comprehensive documentation ready for survey',
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} pageName={pageName}>
+  <Nav />
+  <Breadcrumbs items={breadcrumbs} />
+
+  <main class="max-w-screen-2xl mx-auto px-6 md:px-8 py-10 md:py-14">
+    <article class="max-w-3xl">
+      <header class="mb-10">
+        <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-3">THE ICRA MATRIX</div>
+        <h1 class="text-4xl sm:text-5xl tracking-tighter font-bold leading-[1.08] mb-5">
+          ICRA Class I, II, III &amp; IV — the risk matrix explained
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          ICRA risk classes come from a simple matrix: <strong>patient population risk</strong> crossed with
+          <strong>construction activity intensity</strong>. The result is a four-level scale that dictates how much
+          containment, air control, and documentation your project needs.
+        </p>
+      </header>
+
+      <div class="space-y-8 text-slate-700 leading-relaxed text-[17px]">
+        <p>
+          Getting the class right is the single most important ICRA decision. Classify too low and you under-protect
+          patients. Classify too high and you burn schedule and budget on controls the space doesn’t require. The
+          matrix exists so the judgment is transparent — and defensible during a survey.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">How the matrix works</h2>
+        <p>Imagine a grid:</p>
+        <ul class="list-disc pl-6 space-y-2 marker:text-teal-600">
+          <li>
+            <strong>Vertical axis — patient risk:</strong> from low-risk / average-risk populations (general
+            med-surg) up to high-risk groups (protective environment, airborne infection isolation, neonatal ICU).
+          </li>
+          <li>
+            <strong>Horizontal axis — construction activity:</strong> from minor, non-invasive work with little dust,
+            to major demolition and utility work that opens the building fabric.
+          </li>
+        </ul>
+        <p>
+          Where the two axes meet, you land in one of four classes. Move either axis up and the class rises with it.
+          A ceiling tile swap near a general ward may be Class I or II; the same swap outside a transplant unit can
+          jump to Class III or IV.
+        </p>
+
+        <div class="not-prose overflow-x-auto my-8 border border-slate-200 rounded-3xl bg-white">
+          <table class="w-full text-sm text-left">
+            <caption class="sr-only">ICRA class summary table</caption>
+            <thead class="bg-slate-50 text-slate-600 text-xs uppercase tracking-wider">
+              <tr>
+                <th class="px-5 py-4 font-semibold">Class</th>
+                <th class="px-5 py-4 font-semibold">Typical trigger</th>
+                <th class="px-5 py-4 font-semibold">Control intensity</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="px-5 py-4 font-semibold text-slate-900">Class I</td>
+                <td class="px-5 py-4 text-slate-600">Low patient risk + light work</td>
+                <td class="px-5 py-4 text-slate-600">Basic dust control</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 font-semibold text-slate-900">Class II</td>
+                <td class="px-5 py-4 text-slate-600">Average risk + moderate work</td>
+                <td class="px-5 py-4 text-slate-600">Sealed barriers, traffic control</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 font-semibold text-slate-900">Class III</td>
+                <td class="px-5 py-4 text-slate-600">Elevated risk or invasive work</td>
+                <td class="px-5 py-4 text-slate-600">Negative pressure + HEPA, logged monitoring</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-4 font-semibold text-slate-900">Class IV</td>
+                <td class="px-5 py-4 text-slate-600">Highest risk + major construction</td>
+                <td class="px-5 py-4 text-slate-600">Rigid containment, anteroom, continuous monitoring</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {
+          classes.map((cls) => (
+            <section id={cls.id} class="scroll-mt-24">
+              <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <h2 class="text-2xl tracking-tight font-bold text-slate-900 m-0">{cls.name}</h2>
+                  <span class="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+                    {cls.risk}
+                  </span>
+                </div>
+                <p class="text-slate-700 leading-relaxed mb-5">{cls.summary}</p>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-3">Required controls</h3>
+                <ul class="space-y-2">
+                  {cls.controls.map((control) => (
+                    <li class="flex gap-3 text-[15px] text-slate-700">
+                      <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-500 flex-shrink-0" aria-hidden="true" />
+                      <span>{control}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          ))
+        }
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">Common classification mistakes</h2>
+        <ul class="list-disc pl-6 space-y-2 marker:text-teal-600">
+          <li>
+            <strong>Classifying from the drawing set alone.</strong> Field conditions — adjacent rooms, existing
+            barriers, actual patient population — often raise the class.
+          </li>
+          <li>
+            <strong>Ignoring adjacent spaces.</strong> The work zone boundary isn’t the risk boundary. Air moves.
+          </li>
+          <li>
+            <strong>Freezing the class for the whole schedule.</strong> Reassess when phasing, patient placement, or
+            scope changes.
+          </li>
+          <li>
+            <strong>Skipping written rationale.</strong> If you can’t show why it’s Class II, expect a hard question
+            when something goes wrong.
+          </li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">From class to daily discipline</h2>
+        <p>
+          The class only matters if it drives daily behavior: pressure checks, barrier repairs, housekeeping, and
+          escalation when readings drift. For a field-ready list of what “done” looks like, use the
+          <a href="/icra-compliance-checklist/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">ICRA compliance checklist</a>.
+          New to the topic? Start with
+          <a href="/what-is-icra/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">what ICRA is</a>.
+        </p>
+
+        <div class="my-10 p-6 bg-teal-50 border border-teal-100 rounded-3xl">
+          <h3 class="font-semibold text-lg text-slate-900 mb-2">The brand built for this discipline</h3>
+          <p class="text-slate-700 text-[15px] leading-relaxed mb-4">
+            <strong>icra.builders</strong> is available for acquisition — the category-defining name for contractors,
+            training platforms, and compliance technology serving Class I–IV work. Price on request.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onclick="showInquiryModal()"
+              class="inline-flex items-center justify-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-3xl text-sm transition-colors"
+            >
+              Inquire about the domain
+            </button>
+            <a
+              href="/#acquire"
+              class="inline-flex items-center justify-center px-6 py-3 border border-teal-300 text-teal-800 font-semibold rounded-3xl text-sm hover:bg-teal-100 transition-colors"
+            >
+              Acquisition details
+            </a>
+          </div>
+        </div>
+
+        <nav class="border-t border-slate-200 pt-8 mt-12" aria-label="Related guides">
+          <h2 class="text-xs font-semibold uppercase tracking-[1.5px] text-slate-500 mb-4">Related guides</h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <a href="/what-is-icra/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">What is ICRA?</span>
+              <span class="text-sm text-slate-600">Foundations of the process</span>
+            </a>
+            <a href="/icra-compliance-checklist/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">Compliance checklist</span>
+              <span class="text-sm text-slate-600">Daily controls and evidence</span>
+            </a>
+            <a href="/faq/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">FAQ</span>
+              <span class="text-sm text-slate-600">ICRA + domain answers</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <InquiryModal />
+</BaseLayout>

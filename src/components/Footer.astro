@@ -4,10 +4,13 @@ import {
   ACQUISITION_EMAIL,
   DISCLAIMER,
   acquisitionMailto,
+  RESOURCE_LINKS,
 } from '../lib/constants';
 
 const year = new Date().getFullYear();
 const mailto = acquisitionMailto();
+const isHome = Astro.url.pathname === '/';
+const homeAnchor = (hash: string) => (isHome ? hash : `/${hash}`);
 ---
 
 <footer class="border-t border-slate-200 bg-slate-900 text-slate-400">
@@ -38,7 +41,7 @@ const mailto = acquisitionMailto();
             Acquire <span class="gradient-text">icra.builders</span>
           </h2>
           <p class="text-slate-400 max-w-xl text-sm md:text-base leading-relaxed">
-            A rare, category-defining .builders domain that positions you as the definitive authority for Infection Control Risk Assessment in healthcare construction. Confidential inquiries welcome — professional escrow transfer and fast closing available.
+            A rare, category-defining .builders domain that positions you as the definitive authority for Infection Control Risk Assessment in healthcare construction. Price on request — confidential inquiries welcome. Professional escrow transfer and fast closing available.
           </p>
         </div>
 
@@ -71,11 +74,48 @@ const mailto = acquisitionMailto();
     </div>
   </div>
 
+  <!-- Resource links -->
+  <div class="max-w-screen-2xl mx-auto px-6 pb-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-700 pt-10">
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-[1.5px] text-teal-400 mb-4">ICRA Resources</h3>
+        <ul class="space-y-2.5 text-sm">
+          {
+            RESOURCE_LINKS.map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-teal-300 transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-[1.5px] text-teal-400 mb-4">The Domain</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href={homeAnchor('#opportunity')} class="hover:text-teal-300 transition-colors">Market Opportunity</a></li>
+          <li><a href={homeAnchor('#why-domain')} class="hover:text-teal-300 transition-colors">Why This Domain</a></li>
+          <li><a href={homeAnchor('#acquire')} class="hover:text-teal-300 transition-colors">Acquire icra.builders</a></li>
+          <li><a href="/privacy/" class="hover:text-teal-300 transition-colors">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="sm:col-span-2">
+        <h3 class="text-xs font-semibold uppercase tracking-[1.5px] text-teal-400 mb-4">Quick Answers</h3>
+        <ul class="space-y-2.5 text-sm max-w-md">
+          <li><a href="/faq/" class="hover:text-teal-300 transition-colors">Is icra.builders for sale, and how do I make an offer?</a></li>
+          <li><a href="/what-is-icra/" class="hover:text-teal-300 transition-colors">What is ICRA (Infection Control Risk Assessment)?</a></li>
+          <li><a href="/icra-classes/" class="hover:text-teal-300 transition-colors">What are ICRA Class I–IV risk levels?</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- Legal + meta -->
   <div class="max-w-screen-2xl mx-auto px-6 pb-12">
     <p class="text-[11px] leading-relaxed text-slate-500 max-w-4xl border-t border-slate-700 pt-8">
       {DISCLAIMER}
-      <span class="block mt-2 text-slate-600">Information current as of June 2026.</span>
+      <span class="block mt-2 text-slate-600">Information current as of September 2026.</span>
     </p>
 
     <div

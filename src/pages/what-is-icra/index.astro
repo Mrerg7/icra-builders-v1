@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryModal from '../../components/InquiryModal.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'What Is ICRA? Infection Control Risk Assessment Explained | icra.builders';
+const description =
+  'What is ICRA? A clear guide to Infection Control Risk Assessment for healthcare construction — purpose, process, who owns it, and why hospitals require it during renovations.';
+const breadcrumbs = [{ name: 'What is ICRA?', url: '/what-is-icra/' }];
+const pageName = 'What Is ICRA? Infection Control Risk Assessment Explained';
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} pageName={pageName}>
+  <Nav />
+  <Breadcrumbs items={breadcrumbs} />
+
+  <main class="max-w-screen-2xl mx-auto px-6 md:px-8 py-10 md:py-14">
+    <article class="max-w-3xl">
+      <header class="mb-10">
+        <div class="uppercase tracking-[2px] text-teal-600 text-xs font-semibold mb-3">ICRA FUNDAMENTALS</div>
+        <h1 class="text-4xl sm:text-5xl tracking-tighter font-bold leading-[1.08] mb-5">
+          What is ICRA? Infection Control Risk Assessment, explained.
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          ICRA stands for <strong>Infection Control Risk Assessment</strong> — the structured process healthcare
+          facilities use to identify, evaluate, and control infection risks created by construction and renovation
+          work in occupied buildings.
+        </p>
+      </header>
+
+      <div class="prose-seo space-y-8 text-slate-700 leading-relaxed text-[17px]">
+        <p>
+          Hospitals never stop operating. While wings are demolished, ceilings are opened, and floors are jackhammered,
+          patients continue to receive care in the rooms next door. That overlap — active construction inside an
+          environment full of immunocompromised people — is exactly what ICRA is designed to manage.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">Why ICRA exists</h2>
+        <p>
+          Construction activity disturbs dust, debris, and airflow in ways that can mobilize hazardous organisms —
+          including <em>Aspergillus</em>, <em>Legionella</em>, and other opportunistic pathogens. For a healthy person,
+          a bit of dust is irrelevant. For a patient recovering from surgery, a transplant, or chemotherapy, the same
+          exposure can become a serious healthcare-associated infection (HAI).
+        </p>
+        <p>
+          ICRA formalizes the countermeasures. Instead of treating infection control as a vague “be careful” policy,
+          it forces the project team — owner, designer, contractor, and infection prevention — to answer concrete
+          questions before the first wall is cut:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 marker:text-teal-600">
+          <li>Which patient populations are adjacent to the work?</li>
+          <li>What construction activities will generate dust, noise, or pressure changes?</li>
+          <li>What risk class does this combination produce (Class I through IV)?</li>
+          <li>Which controls — barriers, negative air, HEPA filtration, monitoring — are required?</li>
+          <li>Who inspects, logs, and signs off on compliance daily?</li>
+        </ul>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">Where ICRA comes from</h2>
+        <p>
+          The modern ICRA framework is closely associated with the American Society for Health Care Engineering (ASHE),
+          part of the American Hospital Association. Its guidance — widely used across U.S. hospitals — combines two
+          inputs into a single matrix:
+        </p>
+        <ol class="list-decimal pl-6 space-y-2 marker:text-teal-600">
+          <li>
+            <strong>Lowest-risk patient population</strong> in the affected area (for example, general medical/surgical
+            vs. protective environment vs. airborne infection isolation).
+          </li>
+          <li>
+            <strong>Type and scale of construction activity</strong> — from minor, non-invasive work to large-scale
+            demolition and utility installation.
+          </li>
+        </ol>
+        <p>
+          The intersection of those two inputs yields an ICRA risk class. Higher classes demand stricter containment,
+          air management, and documentation. That classification step is the heart of the process — and the subject of
+          our <a href="/icra-classes/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">ICRA Class I–IV guide</a>.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">The ICRA process, step by step</h2>
+        <p>While procedures vary by organization, a credible ICRA program generally follows this arc:</p>
+        <h3 class="text-xl font-semibold text-slate-900">1. Pre-construction survey</h3>
+        <p>
+          Walk the area. Identify adjacent patient care spaces, air handler zones, and traffic routes. Capture the
+          baseline condition so disputes don’t start later.
+        </p>
+        <h3 class="text-xl font-semibold text-slate-900">2. Risk classification</h3>
+        <p>
+          Assign the ICRA class using the patient-risk × construction-activity matrix. Class I is the lowest risk;
+          Class IV is the highest and requires the most rigorous controls.
+        </p>
+        <h3 class="text-xl font-semibold text-slate-900">3. Control plan</h3>
+        <p>
+          Define physical barriers (rigid vs. plastic), door protocols, anterooms where required, negative pressure
+          with HEPA exhaust, and how construction traffic will be separated from clinical traffic.
+        </p>
+        <h3 class="text-xl font-semibold text-slate-900">4. Execution and daily monitoring</h3>
+        <p>
+          Pressure differentials are checked and logged. Barrier integrity is inspected. Housekeeping standards for
+          the work zone are enforced. Deviations trigger immediate corrective action — not next week’s meeting.
+        </p>
+        <h3 class="text-xl font-semibold text-slate-900">5. Closeout and handoff</h3>
+        <p>
+          Final cleaning, HEPA vacuuming, wet-wiping, removal of temporary controls, and a documented handoff to
+          environmental services and infection prevention before the space returns to clinical use.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">Who is responsible for ICRA?</h2>
+        <p>
+          Responsibility is shared — which is exactly why weak projects fail. The facility owner sets requirements.
+          Infection prevention validates risk. The design team plans sequencing. The general contractor and its
+          subcontractors execute containment. On strong projects, ICRA is a standing agenda item from preconstruction
+          through closeout, not a binder that appears the day before survey.
+        </p>
+        <p>
+          Contractors who treat ICRA as core competency — not paperwork — win more work in occupied healthcare. That
+          capability gap is the market thesis behind the
+          <a href="/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">icra.builders</a> brand.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-bold text-slate-900 pt-4">How ICRA relates to regulation and accreditation</h2>
+        <p>
+          ICRA is not a single federal statute — it is the industry’s operational answer to a stack of expectations:
+          CMS Conditions of Participation, Joint Commission standards on infection control and environment of care,
+          ASHE guidance, and each system’s internal policies. In practice, during surveys and audits, teams are asked
+          to <em>show their work</em>: the assessment, the class, the plan, the pressure logs, the corrective actions.
+        </p>
+        <p>
+          If you want a practical working list for that evidence trail, see the
+          <a href="/icra-compliance-checklist/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">ICRA compliance checklist</a>.
+          Common questions are collected in the
+          <a href="/faq/" class="text-teal-700 font-medium underline decoration-teal-300 underline-offset-4">FAQ</a>.
+        </p>
+
+        <div class="not-prose my-10 p-6 bg-teal-50 border border-teal-100 rounded-3xl">
+          <h3 class="font-semibold text-lg text-slate-900 mb-2">Owning the category</h3>
+          <p class="text-slate-700 text-[15px] leading-relaxed mb-4">
+            ICRA is a discipline with real depth — classification, containment, air management, documentation — and
+            almost no brand owns it. <strong>icra.builders</strong> is the category-defining domain for the companies,
+            trainers, and platforms that do this work. Price on request; confidential inquiries welcome.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onclick="showInquiryModal()"
+              class="inline-flex items-center justify-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-3xl text-sm transition-colors"
+            >
+              Inquire about the domain
+            </button>
+            <a
+              href="/#acquire"
+              class="inline-flex items-center justify-center px-6 py-3 border border-teal-300 text-teal-800 font-semibold rounded-3xl text-sm hover:bg-teal-100 transition-colors"
+            >
+              Acquisition details
+            </a>
+          </div>
+        </div>
+
+        <nav class="not-prose border-t border-slate-200 pt-8 mt-12" aria-label="Related guides">
+          <h2 class="text-xs font-semibold uppercase tracking-[1.5px] text-slate-500 mb-4">Related guides</h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <a href="/icra-classes/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">ICRA Class I–IV</span>
+              <span class="text-sm text-slate-600">How the risk matrix works</span>
+            </a>
+            <a href="/icra-compliance-checklist/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">Compliance checklist</span>
+              <span class="text-sm text-slate-600">What surveyors expect to see</span>
+            </a>
+            <a href="/faq/" class="block p-5 bg-white border border-slate-200 rounded-2xl hover:border-teal-300 transition-colors">
+              <span class="font-semibold text-slate-900 block mb-1">FAQ</span>
+              <span class="text-sm text-slate-600">ICRA + domain acquisition answers</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <InquiryModal />
+</BaseLayout>
