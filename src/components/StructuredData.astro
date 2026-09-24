@@ -73,33 +73,6 @@ const organization = {
   description,
 };
 
-const product = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'icra.builders domain name',
-  description:
-    'Premium domain for Infection Control Risk Assessment in healthcare construction. A category-defining, brandable domain asset for ICRA training, consulting, and compliance. Price on request — confidential acquisition inquiry.',
-  category: 'Domain Name',
-  image: HERO_IMAGE_URL,
-  brand: {
-    '@type': 'Brand',
-    name: SITE_NAME,
-  },
-  sku: 'ICRA-BUILDERS-001',
-  offers: {
-    '@type': 'Offer',
-    url: SITE_URL,
-    availability: 'https://schema.org/InStock',
-    description: 'Available for acquisition. Price on request via confidential inquiry.',
-    seller: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: SITE_URL,
-      email: ACQUISITION_EMAIL,
-    },
-  },
-};
-
 const breadcrumbList =
   breadcrumbs.length > 0
     ? {
@@ -142,6 +115,5 @@ const faqPage =
 <script type="application/ld+json" set:html={JSON.stringify(webPage)} />
 <script type="application/ld+json" set:html={JSON.stringify(webSite)} />
 <script type="application/ld+json" set:html={JSON.stringify(organization)} />
-<script type="application/ld+json" set:html={JSON.stringify(product)} />
 {breadcrumbList && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} />}
 {faqPage && <script type="application/ld+json" set:html={JSON.stringify(faqPage)} />}
