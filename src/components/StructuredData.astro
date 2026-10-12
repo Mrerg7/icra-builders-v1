@@ -73,6 +73,44 @@ const organization = {
   description,
 };
 
+const domainProduct = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'icra.builders premium domain name',
+  description:
+    'Premium .builders domain for healthcare construction, Infection Control Risk Assessment, compliance, training, and specialized renovation services.',
+  url: SITE_URL,
+  image: HERO_IMAGE_URL,
+  category: 'Domain name',
+  brand: {
+    '@type': 'Brand',
+    name: 'icra.builders',
+  },
+  additionalProperty: [
+    {
+      '@type': 'PropertyValue',
+      name: 'Top-level domain',
+      value: '.builders',
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Availability',
+      value: 'Available for acquisition',
+    },
+  ],
+  offers: {
+    '@type': 'Offer',
+    url: `${SITE_URL}#acquire`,
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'USD',
+    seller: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      email: ACQUISITION_EMAIL,
+    },
+  },
+};
+
 const breadcrumbList =
   breadcrumbs.length > 0
     ? {
@@ -115,5 +153,6 @@ const faqPage =
 <script type="application/ld+json" set:html={JSON.stringify(webPage)} />
 <script type="application/ld+json" set:html={JSON.stringify(webSite)} />
 <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+<script type="application/ld+json" set:html={JSON.stringify(domainProduct)} />
 {breadcrumbList && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbList)} />}
 {faqPage && <script type="application/ld+json" set:html={JSON.stringify(faqPage)} />}
